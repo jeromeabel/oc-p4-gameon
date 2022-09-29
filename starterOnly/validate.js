@@ -3,9 +3,7 @@ const elFirst = document.getElementById('first');
 const elLast = document.getElementById('last');
 const elMail = document.getElementById('email');
 const elQuantity = document.getElementById('quantity');
-
 const allCheckBoxes = document.querySelectorAll('.checkbox-input');
-
 
 //Validate values
 let validInputs = [false, false, false, false, false];
@@ -32,7 +30,6 @@ elQuantity.addEventListener('input', function(e) {
     validInputs[3] = /^[0-9]+$/.test(e.target.value);
     printDebug();
 })
-
 
 allCheckBoxes.forEach( function(checkbox) {
     checkbox.addEventListener('change', function(e) { 
