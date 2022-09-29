@@ -16,16 +16,16 @@ Créez une landing page avec Javascript
 ## Mission
 - Terminer le formulaire d'inscription aux concours 
 - Verion actuelle : Jason a fait le HTML et CSS et le début de JS
-- Mission : formulaire fonctionnel avec le JS manquant (voir issues)
+- Mission : formulaire fonctionnel avec le JS manquant (voir issues) ? API Validation ?
 - Repo fork
 - Fichiers séparés html, css, js
 - Comments : décrire chaque fonction et chaque classe, ainsi que les parties du code qui nécessitent plus de détails
 - tester manuellement les fonctionnalités, les entrées de formulaire et l'affichage responsive
 
 ## Issues
-- #1 - Bouton Fermer modal
-- #2 - Entrées du formulaire : 
-	- (1) Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant. Corriger le code HTML quand nécessaire.
+- [x] #1 - Bouton Fermer modal
+- [ ] #2 - Entrées du formulaire : 
+	- [ ] (1) Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant. Corriger le code HTML quand nécessaire.
 	- (2) Utiliser du JavaScript pur pour terminer le formulaire :
 		- Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 		- Les données doivent être saisies correctement :
