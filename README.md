@@ -32,8 +32,8 @@ Créez une landing page avec Javascript
 		- Les données doivent être saisies correctement :
 		- [x] (1) Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
 		- [x] (2) Le champ du nom de famille a un minimum de 2 caractères / n'est pas vide.
-		- [ ] (3) L'adresse électronique est valide.
-		- [ ] (4) Pour le nombre de concours, une valeur numérique est saisie.
+		- [x] (3) L'adresse électronique est valide.
+		- [x] (4) Pour le nombre de concours, une valeur numérique est saisie.
 		- [ ] (5) Un bouton radio est sélectionné.
 		- [ ] (6) La case des conditions générales est cochée, l'autre case est facultative / peut être laissée décochée.
 		- [ ] Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
