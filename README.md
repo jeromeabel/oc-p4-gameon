@@ -34,7 +34,7 @@ Créez une landing page avec Javascript
 		- [x] (2) Le champ du nom de famille a un minimum de 2 caractères / n'est pas vide.
 		- [x] (3) L'adresse électronique est valide.
 		- [x] (4) Pour le nombre de concours, une valeur numérique est saisie.
-		- [ ] (5) Un bouton radio est sélectionné.
+		- [x] (5) Un bouton radio est sélectionné.
 		- [ ] (6) La case des conditions générales est cochée, l'autre case est facultative / peut être laissée décochée.
 		- [ ] Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
 - #3 - Ajouter validation ou messages d'erreur. Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte. Les messages d'erreur doivent s'afficher sous le champ de saisie associé. Exemples :
