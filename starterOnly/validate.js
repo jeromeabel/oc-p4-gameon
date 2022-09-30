@@ -49,6 +49,7 @@ function validateFormInputs() {
 
     // Check checkboxes
     if (!isValidCheckboxes(checkSettings[0])) return false;
+    return true;
 }
 
 /*
