@@ -4,7 +4,6 @@ formSignUp.addEventListener('submit', sendSignUp); // hydration pattern ?
 
 function sendSignUp( e ) {
     e.preventDefault(); // Don't send the form
-    //validateFormInputs();
 
     if ( !validateFormInputs() ) {
         console.log("Problème Houston!");
@@ -15,14 +14,10 @@ function sendSignUp( e ) {
 }
 
 // Regexp patterns
-const regexName = /^[A-Za-z][a-z]+$/; // ! espace \s
-//const regexName = /^(\s\S){2,}$/; // ! espace \s
-// Email MDN :   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-//const regexName = /^[A-Z][A-Za-zéç]+(\s[A-Z][A-Za-zéç]+)*$/; // Majuscule en premier
-const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;// Microsoft
+const regexName = /^[A-Za-z][a-z]+$/; // espace ?
+const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const regexAddress = /^[A-Za-z0-9éç°',]+(\s[A-Za-z0-9éç°',]+)*$/; 
 const regexNumber = /^[0-9]+$/; 
-//const regexDate = /(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?/gm;
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
 
 // Validation settings
@@ -36,7 +31,7 @@ const inputSettings = [
 
 const checkSettings = [
     ['location', 'Veuillez sélectionner une ville.'],
-    ['conditions', "Veuillez accepter les conditions d'utilisations."],
+    ['checkbox1', "Veuillez accepter les conditions d'utilisations."],
 ]
 
 // Main
@@ -49,7 +44,25 @@ function validateFormInputs() {
 
     // Check checkboxes
     if (!isValidCheckboxes(checkSettings[0])) return false;
+
+    // Check final checkbox 
+    if (!isValidConditions(checkSettings[1])) return false;
+
+    // All tests passed !
     return true;
+}
+
+
+// check
+function isValidConditions( input ) {
+    const el = document.getElementById(input[0]);
+    const parent = el.parentElement;
+    if (el.checked) {
+        clearErrorMessage(parent);
+        return true;
+    }
+    setErrorMessage(parent, input[1]);
+    return false;
 }
 
 /*
