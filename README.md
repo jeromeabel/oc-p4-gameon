@@ -29,16 +29,15 @@ Créez une landing page avec Javascript
     - [x] body max-width 1440px
     - [ ] Form input date & number
     - [x] Comment modal.css background.png
-    - [ ] Animation opacity error
     - [ ] Affichage hero image
     - [x] hero-section min-height
-    - [ ] Affichage css error
+    - [x] Affichage css error + animation 
     - [ ] Logo responsive
     - [x] Nav : font, text-underline, +offset, sans ancre accueil
     - [ ] Font ?
-    - [ ] typos
-    - [x] Bouton menu couleur
-- [x] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
+    - [ ] Some typos in index.html
+    - [x] Nav mobile : hamburger button : color red,  .topnav.responsive .icon color white
+    - [x] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 - [x] Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
 - [x] Le champ du nom de famille a un minimum de 2 caractères / n'est pas vide.
 - [x] L'adresse électronique est valide.
@@ -47,7 +46,7 @@ Créez une landing page avec Javascript
 - [x] La case des conditions générales est cochée, l'autre case est facultative
 - [x] Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
 - [x] Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte.
-- [ ] Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (ex. "Merci ! Votre réservation a été reçue.").
+- [x] Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (::after, createElement + classe, ou html)
 - [ ] Visualiser et tester l'interface utilisateur dans les dernières versions de Chrome et de Firefox, ainsi que dans les versions mobile et desktop. Corriger les erreurs d'affichage existantes.
 - [ ] Tester toutes les fonctionnalités des boutons et des entrées de formulaire (valeurs correctes et incorrectes)
 - [ ] Décrire chaque fonction, classes et codes si nécessaires

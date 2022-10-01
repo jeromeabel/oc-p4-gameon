@@ -591,3 +591,19 @@ footer {
     opacity: 1;
   }
 }
+
+.success {
+  position: absolute;
+  top:42%;
+  text-align: center;
+}
+
+/* #form-signup::after {
+  content:"Bravissimo! 🚀";
+  font-size:20px;
+  position: absolute;
+  top:42%;
+  text-align: center;
+  opacity:0.5;
+  transition: all 2s;
+} */

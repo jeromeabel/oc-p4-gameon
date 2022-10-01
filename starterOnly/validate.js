@@ -25,6 +25,9 @@ const checkSettings = [
     ['checkbox1', "Veuillez accepter les conditions d'utilisations."],
 ]
 
+// Message after validation
+const successMsg = "Inscription réussie !<br> 🚀";
+
 // ------------ MAIN ------------- //
 
 // Add the submit event to the form
@@ -41,10 +44,8 @@ function sendSignUp( e ) {
     }
 
     // Validation ok
-    // TODO : Form display none + Msg Validation!
     console.log("Success!");
-
-    showSuccess();
+    showSuccessMsg(successMsg);
 }
 
 /*
@@ -74,12 +75,26 @@ function validateFormInputs() {
 
 
 /* 
- *
+ * Hide elements and show the success message
  */
-function showSuccess() {
+function showSuccessMsg(msg) {
 
+    // Hide
+    // all div.formData and p.text-label  
+    document.querySelector('.text-label').style.display = "none";
+    const formInputs = document.getElementsByClassName('formData');
+    for (el of formInputs) {
+        el.style.opacity = 0;
+        el.style.visibility = "hidden";
+    }
+
+    // Show
+    // Add a new element with the success message
+    const elSuccess = document.createElement('h1');
+    elSuccess.classList.add("success");
+    formSignUp.insertBefore(elSuccess, document.querySelector('.btn-submit'));
+    elSuccess.innerHTML = msg;
 }
-
 
 /*
  * Check a checkbox ---- and display error message
