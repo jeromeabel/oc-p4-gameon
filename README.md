@@ -28,7 +28,8 @@ Créez une landing page avec Javascript
     - [x] Désactivation du contrôle html5
     - [x] body max-width 1440px
     - [ ] Form input date & number
-    - [x] Comment modal.css background.png
+    - [x] Erreur 404 : comment modal.css background.png
+    - [ ] Erreur 404 : favicon.ico
     - [ ] Affichage hero image
     - [x] hero-section min-height
     - [x] Affichage css error + animation 
