@@ -75,6 +75,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
+    color:#ff0000;
   }
 }
 
