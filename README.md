@@ -1,9 +1,6 @@
 # oc-p4-gameon
 Créez une landing page avec Javascript
 
-## Questions
-- Validation par html ? API Validation ?
-
 ## Apprentissage
 
 ## Contexte
@@ -22,31 +19,38 @@ Créez une landing page avec Javascript
 - Fichiers séparés html, css, js
 - Comments : décrire chaque fonction et chaque classe, ainsi que les parties du code qui nécessitent plus de détails
 - tester manuellement les fonctionnalités, les entrées de formulaire et l'affichage responsive
+- Utiliser du JavaScript pur pour terminer le formulaire 
 
 ## Issues / TODO
-- [x] #1 - Bouton Fermer modal
-- [ ] #2 - Entrées du formulaire : 
-	- [x] (1) Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant. Corriger le code HTML quand nécessaire.
-	- (2) Utiliser du JavaScript pur pour terminer le formulaire :
-		- [ ] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
-		- Les données doivent être saisies correctement :
-		- [x] (1) Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
-		- [x] (2) Le champ du nom de famille a un minimum de 2 caractères / n'est pas vide.
-		- [x] (3) L'adresse électronique est valide.
-		- [x] (4) Pour le nombre de concours, une valeur numérique est saisie.
-		- [x] (5) Un bouton radio est sélectionné.
-		- [ ] (6) La case des conditions générales est cochée, l'autre case est facultative / peut être laissée décochée.
-		- [ ] Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
-- #3 - Ajouter validation (form) ou messages d'erreur. Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte. Les messages d'erreur doivent s'afficher sous le champ de saisie associé. Exemples :
-	- "Veuillez entrer 2 caractères ou plus pour le champ du nom."
-    - "Vous devez choisir une option."
-    - "Vous devez vérifier que vous acceptez les termes et conditions."
-    - "Vous devez entrer votre date de naissance."
-- #4 - Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (ex. "Merci ! Votre réservation a été reçue.").
-- #5 - Test manuels.
-	- Visualiser et tester l'interface utilisateur dans les dernières versions de Chrome et de Firefox, ainsi que dans les versions mobile et desktop. Corriger les erreurs d'affichage existantes.
-	- Tester toutes les fonctionnalités des boutons et des entrées de formulaire (tester les valeurs correctes et incorrectes)
-
+- [x] Bouton Fermer modal
+- [x] Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant. 
+- [ ] Corriger le code HTML quand nécessaire.
+    - [x] Désactivation du contrôle html5
+    - [x] body max-width 1440px
+    - [ ] Form input date & number
+    - [x] Comment modal.css background.png
+    - [ ] Animation opacity error
+    - [ ] Affichage hero image
+    - [x] hero-section min-height
+    - [ ] Affichage css error
+    - [ ] Logo responsive
+    - [x] Nav : font, text-underline, +offset, sans ancre accueil
+    - [ ] Font ?
+    - [ ] typos
+    - [x] Bouton menu couleur
+- [x] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
+- [x] Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
+- [x] Le champ du nom de famille a un minimum de 2 caractères / n'est pas vide.
+- [x] L'adresse électronique est valide.
+- [x] Pour le nombre de concours, une valeur numérique est saisie.
+- [x] Un bouton radio est sélectionné.
+- [x] La case des conditions générales est cochée, l'autre case est facultative
+- [x] Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
+- [x] Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte.
+- [ ] Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (ex. "Merci ! Votre réservation a été reçue.").
+- [ ] Visualiser et tester l'interface utilisateur dans les dernières versions de Chrome et de Firefox, ainsi que dans les versions mobile et desktop. Corriger les erreurs d'affichage existantes.
+- [ ] Tester toutes les fonctionnalités des boutons et des entrées de formulaire (valeurs correctes et incorrectes)
+- [ ] Décrire chaque fonction, classes et codes si nécessaires
 
 ## Livrable
 Projet4_abel_jerome.zip :
