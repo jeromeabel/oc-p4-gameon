@@ -11,12 +11,20 @@ const regexNumber = /^[0-9]+$/;
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
 
 // Inputs : text, email, date, number
+// const inputSettings = [
+//     ['first', regexName, 'Veuillez entrer au moins deux caractères.'],
+//     ['last', regexName, 'Veuillez entrer au moins deux caractères.'],
+//     ['email', regexEmail, 'Veuillez entrer une adresse email valide.'],
+//     ['birthdate', regexDate, "Veuillez entrer votre date de naissance."],
+//     ['quantity', regexNumber, 'Veuillez entrer un chiffre.'],
+// ]
+
 const inputSettings = [
-    ['first', regexName, 'Veuillez entrer au moins deux caractères.'],
-    ['last', regexName, 'Veuillez entrer au moins deux caractères.'],
-    ['email', regexEmail, 'Veuillez entrer une adresse email valide.'],
-    ['birthdate', regexDate, "Veuillez entrer votre date de naissance."],
-    ['quantity', regexNumber, 'Veuillez entrer un chiffre.'],
+    { id: 'first', regex: regexName, errorMsg : 'Veuillez entrer au moins deux caractères.'},
+    { id: 'last', regex: regexName, errorMsg : 'Veuillez entrer au moins deux caractères.' },
+    { id: 'email', regex: regexEmail, errorMsg : 'Veuillez entrer une adresse email valide.'},
+    { id: 'birthdate', regex: regexDate, errorMsg : 'Veuillez entrer votre date de naissance.'},
+    { id: 'first', regex: regexNumber, errorMsg : 'Veuillez entrer un chiffre'}
 ]
 
 // Checkboxes & radios
@@ -57,8 +65,8 @@ function sendSignUp( e ) {
 function validateFormInputs() {
 
     // Check inputs (text-control)
-    for (const input of inputSettings) {
-        if (!isValidInput(input)) return false;
+    for (const obj of inputSettings) {
+        if (!isValidInput(obj)) return false;
     }
 
     // Check location
@@ -72,7 +80,6 @@ function validateFormInputs() {
 }
 
 // ------------ FUNCTIONS ------------- //
-
 
 /* 
  * Hide elements and show the success message
@@ -132,14 +139,14 @@ function isValidRadio( input ) {
  * Check if input value matches a regexp ---- and display error message
  * Returns a boolean
  */
-function isValidInput( input ){
-    const el = document.getElementById(input[0]);
+function isValidInput( obj ){
+    const el = document.getElementById(obj.id);
     const parent = el.parentElement;
-    if ( el.value.length > 0  && input[1].test(el.value) ) {
+    if ( el.value.length > 0  && obj.regexp.test(el.value) ) {
         clearErrorMessage(parent);
         return true;
     } else {
-        setErrorMessage(parent, input[2])
+        setErrorMessage(parent, obj.errorMsg)
         return false;
     }
 }
