@@ -1,60 +1,78 @@
-// Form Global Validation
-const formSignUp = document.getElementById('form-signup');
-formSignUp.addEventListener('submit', sendSignUp); // hydration pattern ?
+// Validation of the sign up form
 
-function sendSignUp( e ) {
-    e.preventDefault(); // Don't send the form
-
-    if ( !validateFormInputs() ) {
-        console.log("Problème Houston!");
-        return; // do nothing
-    }
-    // TODO : Form display none + Msg Validation!
-    console.log("Envoyé!");
-}
+// ------------ SETTINGS ------------- //
 
 // Regexp patterns
-const regexName = /^[A-Za-z][a-z]+$/; // espace ?
+const regexName = /^[A-Za-z][a-z]+$/; // ? space
 const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-const regexAddress = /^[A-Za-z0-9éç°',]+(\s[A-Za-z0-9éç°',]+)*$/; 
 const regexNumber = /^[0-9]+$/; 
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
 
-// Validation settings
+// Inputs : text, email, date, number
 const inputSettings = [
     ['first', regexName, 'Veuillez entrer au moins deux caractères.'],
     ['last', regexName, 'Veuillez entrer au moins deux caractères.'],
     ['email', regexEmail, 'Veuillez entrer une adresse email valide.'],
-    ['birthdate', regexDate, "Veuillez entrer date de naissance valide."],
+    ['birthdate', regexDate, "Veuillez entrer votre date de naissance."],
     ['quantity', regexNumber, 'Veuillez entrer un chiffre.'],
 ]
 
+// Checkboxes & radios
 const checkSettings = [
     ['location', 'Veuillez sélectionner une ville.'],
     ['checkbox1', "Veuillez accepter les conditions d'utilisations."],
 ]
 
-// Main
+// ------------ MAIN ------------- //
+
+// Add the submit event to the form
+const formSignUp = document.getElementById('form-signup');
+formSignUp.addEventListener('submit', sendSignUp); // hydration pattern ?
+
+// The callback function 
+function sendSignUp( e ) {
+    e.preventDefault(); // Don't use the default behavior
+
+    if ( !validateFormInputs() ) {
+        console.log("Problème Houston!");
+        return; // Not validated : do nothing
+    }
+
+    // Validation ok
+    // TODO : Form display none + Msg Validation!
+    console.log("Envoyé!");
+}
+
+/*
+ * Main validation process
+ * If one input is not validated, the function returns false
+ * Else, all tests passed, it returns true
+ * Returns a boolean
+ */
 function validateFormInputs() {
 
-    // Check text-control inputs
+    // Check inputs (text-control)
     for (const input of inputSettings) {
         if (!isValidInput(input)) return false;
     }
 
-    // Check checkboxes
-    if (!isValidCheckboxes(checkSettings[0])) return false;
+    // Check location
+    if (!isValidRadio(checkSettings[0])) return false;
 
-    // Check final checkbox 
-    if (!isValidConditions(checkSettings[1])) return false;
+    // Check conditions
+    if (!isValidCheckbox(checkSettings[1])) return false;
 
     // All tests passed !
     return true;
 }
 
+// ------------ FUNCTIONS ------------- //
 
-// check
-function isValidConditions( input ) {
+/*
+ * Check a checkbox ---- and display error message
+ * Returns a boolean
+ */
+function isValidCheckbox( input ) {
     const el = document.getElementById(input[0]);
     const parent = el.parentElement;
     if (el.checked) {
@@ -69,7 +87,7 @@ function isValidConditions( input ) {
  * Check a group of radio buttons ---- and display error message
  * Returns a boolean
  */
-function isValidCheckboxes( input ) {
+function isValidRadio( input ) {
     const checkboxes = document.getElementsByName(input[0]);
     const parent = checkboxes[0].parentElement;
     for (const checkbox of checkboxes) {
