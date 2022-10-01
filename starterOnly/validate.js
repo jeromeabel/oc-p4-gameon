@@ -11,26 +11,18 @@ const regexNumber = /^[0-9]+$/;
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
 
 // Inputs : text, email, date, number
-// const inputSettings = [
-//     ['first', regexName, 'Veuillez entrer au moins deux caractères.'],
-//     ['last', regexName, 'Veuillez entrer au moins deux caractères.'],
-//     ['email', regexEmail, 'Veuillez entrer une adresse email valide.'],
-//     ['birthdate', regexDate, "Veuillez entrer votre date de naissance."],
-//     ['quantity', regexNumber, 'Veuillez entrer un chiffre.'],
-// ]
-
 const inputSettings = [
     { id: 'first', regex: regexName, errorMsg : 'Veuillez entrer au moins deux caractères.'},
     { id: 'last', regex: regexName, errorMsg : 'Veuillez entrer au moins deux caractères.' },
     { id: 'email', regex: regexEmail, errorMsg : 'Veuillez entrer une adresse email valide.'},
     { id: 'birthdate', regex: regexDate, errorMsg : 'Veuillez entrer votre date de naissance.'},
-    { id: 'first', regex: regexNumber, errorMsg : 'Veuillez entrer un chiffre'}
+    { id: 'quantity', regex: regexNumber, errorMsg : 'Veuillez entrer un chiffre'}
 ]
 
 // Checkboxes & radios
 const checkSettings = [
-    ['location', 'Veuillez sélectionner un tournoi.'],
-    ['checkbox1', "Veuillez accepter les conditions d'utilisations."],
+    { name: 'location', errorMsg: 'Veuillez sélectionner un tournoi.' },
+    { id: 'checkbox1', errorMsg: "Veuillez accepter les conditions d'utilisations." },
 ]
 
 // Message after validation
@@ -107,14 +99,14 @@ function showSuccessMsg(msg) {
  * Check a checkbox ---- and display error message
  * Returns a boolean
  */
-function isValidCheckbox( input ) {
-    const el = document.getElementById(input[0]);
+function isValidCheckbox( obj ) {
+    const el = document.getElementById(obj.id);
     const parent = el.parentElement;
     if (el.checked) {
         clearErrorMessage(parent);
         return true;
     }
-    setErrorMessage(parent, input[1]);
+    setErrorMessage(parent, obj.errorMsg);
     return false;
 }
 
@@ -122,8 +114,8 @@ function isValidCheckbox( input ) {
  * Check a group of radio buttons ---- and display error message
  * Returns a boolean
  */
-function isValidRadio( input ) {
-    const checkboxes = document.getElementsByName(input[0]);
+function isValidRadio( obj ) {
+    const checkboxes = document.getElementsByName(obj.name);
     const parent = checkboxes[0].parentElement;
     for (const checkbox of checkboxes) {
         if (checkbox.checked) {
@@ -131,7 +123,7 @@ function isValidRadio( input ) {
             return true; // if once is checked => exit
         }
     }
-    setErrorMessage(parent, input[1]);
+    setErrorMessage(parent, obj.errorMsg);
     return false;
 }
 
@@ -142,7 +134,7 @@ function isValidRadio( input ) {
 function isValidInput( obj ){
     const el = document.getElementById(obj.id);
     const parent = el.parentElement;
-    if ( el.value.length > 0  && obj.regexp.test(el.value) ) {
+    if ( el.value.length > 0  && obj.regex.test(el.value) ) {
         clearErrorMessage(parent);
         return true;
     } else {
