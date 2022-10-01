@@ -1,9 +1,11 @@
-// Validation of the sign up form
+/*
+ * Validation of the sign up form
+ */
 
 // ------------ SETTINGS ------------- //
 
 // Regexp patterns
-const regexName = /^[A-Za-z][a-z]+$/; // ? space
+const regexName = /^[A-z][a-z]+$/; // ? space
 const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const regexNumber = /^[0-9]+$/; 
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
@@ -19,7 +21,7 @@ const inputSettings = [
 
 // Checkboxes & radios
 const checkSettings = [
-    ['location', 'Veuillez sélectionner une ville.'],
+    ['location', 'Veuillez sélectionner un tournoi.'],
     ['checkbox1', "Veuillez accepter les conditions d'utilisations."],
 ]
 
@@ -31,16 +33,18 @@ formSignUp.addEventListener('submit', sendSignUp); // hydration pattern ?
 
 // The callback function 
 function sendSignUp( e ) {
-    e.preventDefault(); // Don't use the default behavior
+    e.preventDefault(); // Don't use the default behavior of submit
 
     if ( !validateFormInputs() ) {
-        console.log("Problème Houston!");
-        return; // Not validated : do nothing
+        console.log("Nous avons un problème Houston !");
+        return; // Not validated : exit, do nothing
     }
 
     // Validation ok
     // TODO : Form display none + Msg Validation!
-    console.log("Envoyé!");
+    console.log("Success!");
+
+    showSuccess();
 }
 
 /*
@@ -67,6 +71,15 @@ function validateFormInputs() {
 }
 
 // ------------ FUNCTIONS ------------- //
+
+
+/* 
+ *
+ */
+function showSuccess() {
+
+}
+
 
 /*
  * Check a checkbox ---- and display error message
