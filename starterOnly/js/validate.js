@@ -6,7 +6,7 @@
 
 // Regexp patterns
 //const regexName = /^[A-z][a-z]+$/; // ? space
-const regexName = /^([A-Za-zÀ-ÖØ-öø-ÿ]){2,}$/; // with accentuation
+const regexName = /^([A-Za-zÀ-ÖØ-öø-ÿ]){2,}[\s-]([A-Za-zÀ-ÖØ-öø-ÿ])*$/; // with accentuation
 const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // from mdn
 const regexNumber = /^[0-9]+$/; 
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
