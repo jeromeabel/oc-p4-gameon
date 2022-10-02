@@ -1,7 +1,6 @@
 # oc-p4-gameon
 Créez une landing page avec Javascript
 
-## Apprentissage
 
 ## Contexte
 - GameOn, PME, spécialisée dans les conférences et les concours de jeux.
@@ -23,22 +22,7 @@ Créez une landing page avec Javascript
 
 ## Issues / TODO
 - [x] Bouton Fermer modal
-- [x] Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant. 
-- [ ] Corriger le code HTML quand nécessaire.
-    - [x] Désactivation du contrôle html5 novalidate
-    - [x] Some typos in index.html
-    - [x] html : lang fr and title
-    - [x] body max-width 1440px
-    - [x] Form input email, date & number > text
-    - [x] Erreur 404 : comment modal.css background.png
-    - [ ] Erreur 404 : favicon.ico
-    - [ ] Affichage hero image
-    - [x] hero-section min-height
-    - [x] Affichage css error + animation 
-    - [ ] Logo responsive
-    - [x] Nav : font, text-underline, +offset, sans ancre accueil
-    - [x] Nav mobile : hamburger button : color red,  .topnav.responsive .icon color white
-    - [x] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
+- [x] HTML. attributs "for" et "id" 
 - [x] Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
 - [x] Le champ du nom de famille a un minimum de 2 caractères / n'est pas vide.
 - [x] L'adresse électronique est valide.
@@ -47,9 +31,23 @@ Créez une landing page avec Javascript
 - [x] La case des conditions générales est cochée, l'autre case est facultative
 - [x] Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
 - [x] Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte.
-- [x] Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (::after, createElement + classe, ou html)
-- [ ] Visualiser et tester l'interface utilisateur dans les dernières versions de Chrome et de Firefox, ainsi que dans les versions mobile et desktop. Corriger les erreurs d'affichage existantes.
-- [x] Tester toutes les fonctionnalités des boutons et des entrées de formulaire (valeurs correctes et incorrectes)
+- [x] Après une validation réussie : un message de confirmation de la soumission réussie
+- [ ] Tester desktop/mobile sur Chrome et Firefox
+- [ ] Corriger le code HTML et les erreurs d'affichage
+    - [x] Désactivation du contrôle html5 novalidate
+    - [x] Some typos in index.html
+    - [x] html : lang fr and title
+    - [x] body max-width 1440px
+    - [x] Form input email, date & number > text
+    - [x] Erreur 404 : comment modal.css background.png
+    - [x] Erreur 404 : favicon.ico
+    - [x] Affichage hero image
+    - [x] hero-section min-height
+    - [x] Affichage css error + animation 
+    - [x] Nav : font, text-underline, +offset, delete "accueil"
+    - [x] Nav mobile : hamburger button color, layout
+    - [x] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
+- [x] Tester les boutons et les entrées de formulaire (valeurs correctes et incorrectes)
 - [x] Décrire chaque fonction, classes et codes si nécessaires
 
 ## Livrable
@@ -73,3 +71,11 @@ Projet4_abel_jerome.zip :
 ## Questions
  - font link ?
  - html5 novalidate + email, date, number > text ?
+ - message de confirmation  (::after, createElement + classe, ou html)
+ - affichage mobile ?
+ - function valid + affichage ? deux 
+- error : data-error
+- Tester directement avec des event ou via le bouton submit : Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
+
+ ## Apprentissage
+- JS, return, regexp, event (preventDefault), boucle, DOM (attribute), data-error
