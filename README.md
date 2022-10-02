@@ -25,9 +25,11 @@ Créez une landing page avec Javascript
 - [x] Bouton Fermer modal
 - [x] Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant. 
 - [ ] Corriger le code HTML quand nécessaire.
-    - [x] Désactivation du contrôle html5
+    - [x] Désactivation du contrôle html5 novalidate
+    - [x] Some typos in index.html
+    - [x] html : lang fr and title
     - [x] body max-width 1440px
-    - [ ] Form input date & number
+    - [x] Form input email, date & number > text
     - [x] Erreur 404 : comment modal.css background.png
     - [ ] Erreur 404 : favicon.ico
     - [ ] Affichage hero image
@@ -35,8 +37,6 @@ Créez une landing page avec Javascript
     - [x] Affichage css error + animation 
     - [ ] Logo responsive
     - [x] Nav : font, text-underline, +offset, sans ancre accueil
-    - [ ] Font ?
-    - [ ] Some typos in index.html
     - [x] Nav mobile : hamburger button : color red,  .topnav.responsive .icon color white
     - [x] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 - [x] Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
@@ -49,8 +49,8 @@ Créez une landing page avec Javascript
 - [x] Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte.
 - [x] Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (::after, createElement + classe, ou html)
 - [ ] Visualiser et tester l'interface utilisateur dans les dernières versions de Chrome et de Firefox, ainsi que dans les versions mobile et desktop. Corriger les erreurs d'affichage existantes.
-- [ ] Tester toutes les fonctionnalités des boutons et des entrées de formulaire (valeurs correctes et incorrectes)
-- [ ] Décrire chaque fonction, classes et codes si nécessaires
+- [x] Tester toutes les fonctionnalités des boutons et des entrées de formulaire (valeurs correctes et incorrectes)
+- [x] Décrire chaque fonction, classes et codes si nécessaires
 
 ## Livrable
 Projet4_abel_jerome.zip :
@@ -70,3 +70,6 @@ Projet4_abel_jerome.zip :
     - https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript
     - https://openclassrooms.com/fr/courses/7697016-creez-des-pages-web-dynamiques-avec-javascript
 
+## Questions
+ - font link ?
+ - html5 novalidate + email, date, number > text ?
