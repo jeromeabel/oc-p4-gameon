@@ -5,12 +5,12 @@
 // ------------ SETTINGS ------------- //
 
 // Regexp patterns
-//const regexName = /^[A-z][a-z]+$/; // ? space
 const regexName = /^([A-Za-zÀ-ÖØ-öø-ÿ]){2,}[\s-]([A-Za-zÀ-ÖØ-öø-ÿ])*$/; // with accentuation
 const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // from mdn
 const regexNumber = /^[0-9]+$/; 
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
-// date = (0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])\/([1-9]|0[1-9]|1[0-2])\/[0-9]{4}
+// regexName = ^(?=.*[A-Z])[a-zA-zÀ-ÖØ-öø-ÿœŒ\s\-\']+$
+// regexDate = (0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])\/([1-9]|0[1-9]|1[0-2])\/[0-9]{4}
 
 // Inputs : text, email, date, number
 const inputSettings = [
@@ -23,7 +23,7 @@ const inputSettings = [
 
 // Checkboxes & radios
 const checkSettings = [
-    { name: 'location', errorMsg: 'Veuillez sélectionner un tournoi.' },
+    { name: 'location', errorMsg: "Veuillez sélectionner un tournoi." },
     { id: 'checkbox1', errorMsg: "Veuillez accepter les conditions d'utilisations." },
 ]
 
@@ -34,7 +34,7 @@ const successMsg = "Inscription réussie !<br> 🚀";
 
 // Add the submit event to the form
 const formSignUp = document.getElementById('form-signup');
-formSignUp.addEventListener('submit', sendSignUp); // hydration pattern ?
+formSignUp.addEventListener('submit', sendSignUp);
 
 // The callback function 
 function sendSignUp( e ) {
@@ -81,7 +81,7 @@ function validateFormInputs() {
 function showSuccessMsg(msg) {
 
     // Hide
-    // all div.formData and p.text-label  
+    // All div.formData and p.text-label  
     document.querySelector('.text-label').style.display = "none";
     const formInputs = document.getElementsByClassName('formData');
     for (el of formInputs) {
@@ -101,7 +101,7 @@ function showSuccessMsg(msg) {
  * Check a checkbox ---- and display error message
  * Returns a boolean
  */
-function isValidCheckbox( obj ) {
+function isValidCheckbox(obj) {
     const el = document.getElementById(obj.id);
     const parent = el.parentElement;
     if (el.checked) {
@@ -116,7 +116,7 @@ function isValidCheckbox( obj ) {
  * Check a group of radio buttons ---- and display error message
  * Returns a boolean
  */
-function isValidRadio( obj ) {
+function isValidRadio(obj) {
     const checkboxes = document.getElementsByName(obj.name);
     const parent = checkboxes[0].parentElement;
     for (const checkbox of checkboxes) {
@@ -133,7 +133,7 @@ function isValidRadio( obj ) {
  * Check if input value matches a regexp ---- and display error message
  * Returns a boolean
  */
-function isValidInput( obj ){
+function isValidInput(obj){
     const el = document.getElementById(obj.id);
     const parent = el.parentElement;
     if ( el.value.length > 0  && obj.regex.test(el.value) ) {
@@ -146,12 +146,12 @@ function isValidInput( obj ){
 }
 
 // Display error messages and clear them
-function setErrorMessage (el, msg) {
+function setErrorMessage(el, msg) {
     el.setAttribute("data-error", msg);
     el.setAttribute("data-error-visible", "true");
 }
 
-function clearErrorMessage (el) {
+function clearErrorMessage(el) {
     el.setAttribute("data-error", "");
     el.setAttribute("data-error-visible", "false");
 }
