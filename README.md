@@ -32,8 +32,8 @@ Créez une landing page avec Javascript
 - [x] Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
 - [x] Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte.
 - [x] Après une validation réussie : un message de confirmation de la soumission réussie
-- [ ] Tester desktop/mobile sur Chrome et Firefox
-- [ ] Corriger le code HTML et les erreurs d'affichage
+- [x] Tester desktop/mobile sur Chrome et Firefox
+- [x] Corriger le code HTML et les erreurs d'affichage
     - [x] Désactivation du contrôle html5 novalidate
     - [x] Some typos in index.html
     - [x] html : lang fr and title
@@ -68,14 +68,6 @@ Projet4_abel_jerome.zip :
     - https://openclassrooms.com/fr/courses/6175841-apprenez-a-programmer-avec-javascript
     - https://openclassrooms.com/fr/courses/7697016-creez-des-pages-web-dynamiques-avec-javascript
 
-## Questions
- - font link ?
- - html5 novalidate + email, date, number > text ?
- - message de confirmation  (::after, createElement + classe, ou html)
- - affichage mobile ?
- - function valid + affichage ? deux 
-- error : data-error
-- Tester directement avec des event ou via le bouton submit : Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 
  ## Apprentissages
 - JS return methode, regexp, event (preventDefault), boucle, DOM (attribute, class, style, create, insert), data-error, obj, for, novalidate
