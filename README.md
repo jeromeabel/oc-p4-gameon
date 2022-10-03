@@ -77,5 +77,5 @@ Projet4_abel_jerome.zip :
 - error : data-error
 - Tester directement avec des event ou via le bouton submit : Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 
- ## Apprentissage
-- JS, return, regexp, event (preventDefault), boucle, DOM (attribute), data-error
+ ## Apprentissages
+- JS return methode, regexp, event (preventDefault), boucle, DOM (attribute, class, style, create, insert), data-error, obj, for, novalidate
