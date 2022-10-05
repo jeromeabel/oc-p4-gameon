@@ -8,15 +8,12 @@
 ## TODO HTML
 Validator HTML :
 - [x] Self-closing tag syntax 
-- [x] img Logo : Bad value auto
+- [x] img Logo : Bad value height/width auto
 - [x] line 31. Stray end tag div
 - [x] line 190. Attribute required not allowed on element label
-- [ ] line 205. duplicate attribute class class="button"
-
-- [ ] attributs "for" et "id"
+- [x] line 205. duplicate attribute class class="button"
+- [ ] Attributs "for" et "id"
 - [ ] Nav : font, text-underline, +offset, delete "accueil"
-
-
 - [ ] html : lang fr and title
 - [ ] Désactivation du contrôle html5 novalidate
 - [ ] Some typos in index.html
@@ -24,6 +21,8 @@ Validator HTML :
 - [ ] Erreur 404 : favicon.ico
 
 ## TODO CSS
+Validator CSS :
+
 - [ ] Affichage hero image
 - [ ] body max-width 1440px
 - [ ] Erreur 404 : comment modal.css background.png
