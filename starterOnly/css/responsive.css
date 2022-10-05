@@ -10,6 +10,7 @@
     background: #fff;
     color: #000;
     padding: 0;
+    min-width: 100%;
   }
 
   .hero-content::after {
@@ -27,7 +28,8 @@
 
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
+    margin-top: 20px;
   }
 
   .hero-img img {
