@@ -110,7 +110,7 @@ main {
   padding-top: 0.5vw;
   padding-left: 2vw;
   padding-right: 2vw;
-  margin: 1px 20px 15px;
+  margin: 20px 15px;
   border-radius: 2rem;
   text-align: justify;
 
@@ -476,9 +476,9 @@ input[data-error]::after {
   display: none;
 }
 footer {
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 0 20px;
+  /* padding-left: 2vw;
+  padding-right: 2vw; */
+  margin: 20px 0;
 }
 @media screen and (max-width: 800px) {
   .hero-section {
