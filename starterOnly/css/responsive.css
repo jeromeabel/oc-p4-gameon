@@ -2,9 +2,9 @@
 
 @media screen and (max-width: 800px) {
   main {
-    margin:5px 15px;
+    margin:0 15px;
   }
-  
+
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -51,6 +51,14 @@
     margin: 10px 0;
     font-size:0.8rem;
     text-align: center;
+  }
+
+  .topnav {
+    margin: 30px 20px 20px 20px;
+  }
+
+  .header-logo img {
+    width:50%;
   }
 }
 
