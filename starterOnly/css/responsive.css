@@ -82,6 +82,13 @@
     position: absolute;
     right: 0;
     top: 0;
+    background-color: transparent; 
+  }
+
+  .topnav .icon:hover {
+    background-color: transparent; 
+    color: #f00; 
+    border-radius: 0px;
   }
 
   .topnav.responsive a {
@@ -100,5 +107,6 @@
     float: right;
     display: block;
     margin-top: -15px;
+    color: #f00;
   }
 }
