@@ -1,6 +1,10 @@
 /* Desktop first max-width large to small sizes */
 
 @media screen and (max-width: 800px) {
+  main {
+    margin:5px 15px;
+  }
+  
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -44,7 +48,8 @@
   }
 
   .copyrights {
-    margin-top: 50px;
+    margin: 10px 0;
+    font-size:0.8rem;
     text-align: center;
   }
 }
