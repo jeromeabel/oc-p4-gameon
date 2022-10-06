@@ -4,9 +4,7 @@
 
 // ------------ SETTINGS ------------- //
 
-// Dev variable 
-// true : avoid tests
-// false : final release & tests
+// Dev variable
 const avoidTests = false;
 
 // Regexp patterns
@@ -14,10 +12,6 @@ const regexName = /^[A-ÿ]{2,}[A-ÿ\-\s]*$/;
 const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // from mdn
 const regexNumber = /^[0-9]+$/; 
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
-// regexName = /^(?=.*[A-Z])[a-zA-zÀ-ÖØ-öø-ÿœŒ\s\-\']+$/;
-// regexName = /^.*$/;
-///regexName =^([A-Za-zÀ-ÖØ-öø-ÿ]){2,}[\s-]([A-Za-zÀ-ÖØ-öø-ÿ])*$/; // with accentuation
-// regexDate = (0[1-9]|1[0-9]|2[0-9]|3[0-1]|[1-9])\/([1-9]|0[1-9]|1[0-2])\/[0-9]{4}
 
 // Inputs : text, email, date, number
 const inputSettings = [
