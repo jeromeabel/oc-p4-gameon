@@ -4,6 +4,11 @@
 
 // ------------ SETTINGS ------------- //
 
+// Dev variable 
+// true : avoid tests
+// false : final release & tests
+const avoidTests = false;
+
 // Regexp patterns
 const regexName = /^[A-ÿ]{2,}[A-ÿ\-\s]*$/;
 const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // from mdn
@@ -42,8 +47,8 @@ formSignUp.addEventListener('submit', sendSignUp);
 function sendSignUp( e ) {
     e.preventDefault(); // Don't use the default behavior of submit
 
-    if ( !validateFormInputs() ) {
-        console.log("Nous avons un problème Houston !");
+    if ( !avoidTests && !validateFormInputs() ) {
+        console.log("We got a problem Houston !");
         return; // Not validated : exit, do nothing
     }
 
@@ -86,7 +91,7 @@ function showSuccessMsg(msg) {
     // All div.formData and p.text-label  
     document.querySelector('.text-label').style.display = "none";
     const formInputs = document.getElementsByClassName('formData');
-    for (el of formInputs) {
+    for (const el of formInputs) {
         el.style.opacity = 0;
         el.style.visibility = "hidden";
     }
@@ -94,9 +99,13 @@ function showSuccessMsg(msg) {
     // Show
     // Add a new element with the success message
     const elSuccess = document.createElement('h1');
+    const elBtnSubmit = document.querySelector('.btn-submit');
     elSuccess.classList.add("success");
-    formSignUp.insertBefore(elSuccess, document.querySelector('.btn-submit'));
+    formSignUp.insertBefore(elSuccess, elBtnSubmit);
     elSuccess.innerHTML = msg;
+
+    // Disable submit button
+    elBtnSubmit.addEventListener('click', (e) => e.preventDefault());
 }
 
 /*
