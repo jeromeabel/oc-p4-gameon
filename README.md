@@ -1,7 +1,6 @@
 # oc-p4-gameon
 Créez une landing page avec Javascript
 
-
 ## Contexte
 - GameOn, PME, spécialisée dans les conférences et les concours de jeux.
 
@@ -11,14 +10,13 @@ Créez une landing page avec Javascript
 - Jason
 
 ## Mission
-- Terminer le formulaire d'inscription aux concours 
+- Terminer le formulaire d'inscription aux concours en Vanilla JS 
 - Verion actuelle : Jason a fait le HTML et CSS et le début de JS
-- Mission : formulaire fonctionnel avec le JS manquant (voir issues) ? API Validation ?
+- Tâches : issues
 - Repo fork
 - Fichiers séparés html, css, js
 - Comments : décrire chaque fonction et chaque classe, ainsi que les parties du code qui nécessitent plus de détails
-- tester manuellement les fonctionnalités, les entrées de formulaire et l'affichage responsive
-- Utiliser du JavaScript pur pour terminer le formulaire 
+- Tester manuellement les fonctionnalités, les entrées de formulaire et l'affichage responsive
 
 ## Issues / TODO
 - [x] Bouton Fermer modal
@@ -40,13 +38,12 @@ Créez une landing page avec Javascript
     - [x] body max-width 1440px
     - [x] Form input email, date & number > text
     - [x] Erreur 404 : comment modal.css background.png
-    - [x] Erreur 404 : favicon.ico
     - [x] Affichage hero image
     - [x] hero-section min-height
     - [x] Affichage css error + animation 
     - [x] Nav : font, text-underline, +offset, delete "accueil"
     - [x] Nav mobile : hamburger button color, layout
-    - [x] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
+- [x] Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 - [x] Tester les boutons et les entrées de formulaire (valeurs correctes et incorrectes)
 - [x] Décrire chaque fonction, classes et codes si nécessaires
 
@@ -71,3 +68,4 @@ Projet4_abel_jerome.zip :
 
  ## Apprentissages
 - JS return methode, regexp, event (preventDefault), boucle, DOM (attribute, class, style, create, insert), data-error, obj, for, novalidate
+- Debug HTML/CSS
