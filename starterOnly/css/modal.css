@@ -205,6 +205,17 @@ input {
   border: 2px solid #e54858;
 }
 
+
+/* New class success */
+.success {
+  position: absolute;
+  top:0;
+  padding-top:61%;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
 /* 
 input[data-error]::after {
     content: attr(data-error);
