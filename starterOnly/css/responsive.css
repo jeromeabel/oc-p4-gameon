@@ -61,15 +61,6 @@
     width:50%;
   }
 
-  .content {
-    margin-top:80px;
-    border-radius: 8px 8px 0 0;
-  }
-
-  .bground {
-    background-color: transparent;
-  }
-
   label, .text-label { 
     font-size: 12px
   }
@@ -84,7 +75,6 @@
     padding: 12px 32px;
   }
 }
-
 
 @media screen and (max-width: 768px) {
 
@@ -119,6 +109,11 @@
     display: block;
     text-align: left;
   }
+
+  .content {
+    margin-top:80px;
+    border-radius: 8px 8px 0 0;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -131,5 +126,13 @@
     display: block;
     margin-top: -15px;
     color: #f00;
+  }
+
+  .bground {
+    background-color: transparent;
+  }
+
+  footer {
+    display: none;
   }
 }
