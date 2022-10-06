@@ -60,6 +60,29 @@
   .header-logo img {
     width:50%;
   }
+
+  .content {
+    margin-top:80px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .bground {
+    background-color: transparent;
+  }
+
+  label, .text-label { 
+    font-size: 12px
+  }
+
+  .checkbox-label, .checkbox2-label {
+    margin-left: 28px;
+  }
+  .checkbox-label .checkbox-icon, .checkbox2-label .checkbox-icon {
+    left: -25px;
+  }
+  .btn-submit, .btn-signup {
+    padding: 12px 32px;
+  }
 }
 
 
