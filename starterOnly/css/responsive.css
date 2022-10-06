@@ -1,9 +1,8 @@
-/* Desktop first design */
-
+/* Desktop first max-width large to small sizes */
 
 @media screen and (max-width: 800px) {
-  .topnav {
-    margin:5%;
+  main {
+    margin:0 15px;
   }
 
   .hero-section {
@@ -14,7 +13,8 @@
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px 0;
+    padding: 0;
+    min-width: 100%;
   }
 
   .hero-content::after {
@@ -26,14 +26,14 @@
   }
 
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     white-space: normal;
-    font-weight: bold;
   }
 
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
+    margin-top: 20px;
   }
 
   .hero-img img {
@@ -48,17 +48,31 @@
   }
 
   .copyrights {
-    margin-top: 50px;
+    margin: 10px 0;
+    font-size:0.8rem;
     text-align: center;
   }
 
-  .bground {
-    background-color: rgb(0,0,0,0);
+  .topnav {
+    margin: 30px 20px 20px 20px;
   }
-  .content {
-  margin: 15% 0;
-  min-width: 100%;
-  height: 100%;
+
+  .header-logo img {
+    width:50%;
+  }
+
+  label, .text-label { 
+    font-size: 12px
+  }
+
+  .checkbox-label, .checkbox2-label {
+    margin-left: 28px;
+  }
+  .checkbox-label .checkbox-icon, .checkbox2-label .checkbox-icon {
+    left: -25px;
+  }
+  .btn-submit, .btn-signup {
+    padding: 12px 32px;
   }
 }
 
@@ -71,16 +85,6 @@
   .topnav a.icon {
     float: right;
     display: block;
-    color: #f00;
-  }
-
-  .topnav a.icon:hover {
-    background-color: #f00;
-    color: #fff;
-  }
-  
-  .topnav.responsive  .main-navbar {
-    margin-right: 60px;
   }
 
   .topnav.responsive {
@@ -91,7 +95,13 @@
     position: absolute;
     right: 0;
     top: 0;
-    /* color: #fff; */
+    background-color: transparent; 
+  }
+
+  .topnav .icon:hover {
+    background-color: transparent; 
+    color: #f00; 
+    border-radius: 0px;
   }
 
   .topnav.responsive a {
@@ -99,14 +109,14 @@
     display: block;
     text-align: left;
   }
+
+  .content {
+    margin-top:80px;
+    border-radius: 8px 8px 0 0;
+  }
 }
 
 @media screen and (max-width: 540px) {
-
-  .content {
-    margin: 22% 0;
-    }
-
   .topnav a {
     display: none;
   }
@@ -114,6 +124,15 @@
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: 15px;
+    margin-top: -15px;
+    color: #f00;
+  }
+
+  .bground {
+    background-color: transparent;
+  }
+
+  footer {
+    display: none;
   }
 }
