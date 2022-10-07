@@ -1,3 +1,20 @@
+// ------------ DOM ------------- //
+
+const modalbg = document.querySelector(".bground");
+const modalBtn = document.querySelectorAll(".modal-btn");
+const closeBtn = document.querySelector("span.close");
+
+// ------------ EVENTS ------------- //
+
+// Launch modal event
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+
+// Close modal event
+closeBtn.addEventListener('click', closeModal);
+
+// ------------ FUNCTIONS ------------- //
+
+// Nav icon toggle
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -7,25 +24,17 @@ function editNav() {
   }
 }
 
-// DOM Elements
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const closeBtn = document.querySelector("span.close");
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-// launch modal form
+// Launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+  modalbg.classList.add("bground--open");
 }
 
-// Close Modal and Reset Form inputs
+// Close modal and reset form inputs
 function closeModal() {
-  // Hide Modal
-  modalbg.style.display = "none";
+  // Hide modal
+  modalbg.classList.remove("bground--open");
 
-  // Remove Success Element
+  // Remove success element
   const elSuccess = document.querySelector(".success");
   if (elSuccess) elSuccess.remove();
 
@@ -37,13 +46,10 @@ function closeModal() {
       el.style.visibility = "visible";
   }
 
-  // Submit Event change callback
+  // Submit event change callback
   formSignUp.removeEventListener('submit', closeModal);
   formSignUp.addEventListener('submit', sendSignUp);
 
-  // Reset Form
+  // Reset form
   document.querySelector("#form-signup").reset();
 }
-
-// Close modal
-closeBtn.addEventListener('click', closeModal);
