@@ -210,8 +210,9 @@ input {
 /* New class success */
 .success {
   position: absolute;
-  top:0;
-  padding-top:61%;
+  top: 45%;
+  left: 0;
+  width: 100%;
   text-align: center;
   font-size: 2.5rem;
   font-weight: 100;
