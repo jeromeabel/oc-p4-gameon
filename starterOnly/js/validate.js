@@ -4,28 +4,28 @@
 
 // ------------ SETTINGS ------------- //
 
-// Dev variable
+// Development variable to pass tests
 const avoidTests = false;
 
 // Regexp patterns
 const regexName = /^[A-ÿ]{2,}[A-ÿ\-\s]*$/;
-const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,3})$/; // from mdn
+const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,3})$/; // from mdn + fix
 const regexNumber = /^[0-9]+$/; 
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
 
 // Inputs : text, email, date, number
 const inputSettings = [
-    { id: 'first', regex: regexName, errorMsg : 'Veuillez entrer au moins deux caractères.'},
-    { id: 'last', regex: regexName, errorMsg : 'Veuillez entrer au moins deux caractères.' },
-    { id: 'email', regex: regexEmail, errorMsg : 'Veuillez entrer une adresse email valide.'},
-    { id: 'birthdate', regex: regexDate, errorMsg : 'Veuillez entrer votre date de naissance.'},
-    { id: 'quantity', regex: regexNumber, errorMsg : 'Veuillez entrer un chiffre'}
+    { id: 'first'       , regex: regexName  , errorMsg : 'Veuillez entrer au moins deux caractères.'},
+    { id: 'last'        , regex: regexName  , errorMsg : 'Veuillez entrer au moins deux caractères.' },
+    { id: 'email'       , regex: regexEmail , errorMsg : 'Veuillez entrer une adresse email valide.'},
+    { id: 'birthdate'   , regex: regexDate  , errorMsg : 'Veuillez entrer votre date de naissance.'},
+    { id: 'quantity'    , regex: regexNumber, errorMsg : 'Veuillez entrer un chiffre'}
 ]
 
 // Checkboxes & radios
 const checkSettings = [
-    { name: 'location', errorMsg: "Veuillez sélectionner un tournoi." },
-    { id: 'checkbox1', errorMsg: "Veuillez accepter les conditions d'utilisations." },
+    { name: 'location'  , errorMsg: "Veuillez sélectionner un tournoi." },
+    { id: 'checkbox1'   , errorMsg: "Veuillez accepter les conditions d'utilisations." },
 ]
 
 // Message after validation
@@ -50,10 +50,9 @@ function sendSignUp( e ) {
     console.log("Success!");
     showSuccessMsg(successMsg);
 
-    // Btn
-    // const elBtnSubmit = document.querySelector('.btn-submit');
-    // elBtnSubmit.addEventListener('click', closeModal);
-    // formSignUp.addEventListener('submit', closeModal);
+    // Submit Event change callback
+    formSignUp.removeEventListener('submit', sendSignUp);
+    formSignUp.addEventListener('submit', closeModal);
 }
 
 /*
@@ -104,9 +103,6 @@ function showSuccessMsg(msg) {
     elSuccess.classList.add("success");
     formSignUp.insertBefore(elSuccess, elBtnSubmit);
     elSuccess.innerHTML = msg;
-
-    // Disable submit button
-    elBtnSubmit.addEventListener('click', (e) => e.preventDefault());
 }
 
 /*

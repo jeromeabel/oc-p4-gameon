@@ -37,8 +37,9 @@ function closeModal() {
       el.style.visibility = "visible";
   }
 
-  // Btn Submit
-  document.querySelector(".btn-submit").addEventListener('click', () => true);
+  // Submit Event change callback
+  formSignUp.removeEventListener('submit', closeModal);
+  formSignUp.addEventListener('submit', sendSignUp);
 
   // Reset Form
   document.querySelector("#form-signup").reset();
