@@ -9,7 +9,7 @@ const avoidTests = false;
 
 // Regexp patterns
 const regexName = /^[A-ÿ]{2,}[A-ÿ\-\s]*$/;
-const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; // from mdn
+const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,3})$/; // from mdn
 const regexNumber = /^[0-9]+$/; 
 const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|ruary)|Mar(|ch)|Apr(|il)|May|Jun(|e)|Jul(|y)|Aug(|ust)|Sept(|ember)|Oct(|ober)|(Nov|Dec)(|ember))([\s\-])(|([\d]+){1,2}([\s\-]|\, ))([\d]+){4})/;
 
@@ -29,7 +29,7 @@ const checkSettings = [
 ]
 
 // Message after validation
-const successMsg = "Inscription réussie !<br> 🚀";
+const successMsg = "Inscription réussie !<br>🚀";
 
 // ------------ MAIN ------------- //
 
@@ -49,6 +49,11 @@ function sendSignUp( e ) {
     // Validation ok
     console.log("Success!");
     showSuccessMsg(successMsg);
+
+    // Btn
+    // const elBtnSubmit = document.querySelector('.btn-submit');
+    // elBtnSubmit.addEventListener('click', closeModal);
+    // formSignUp.addEventListener('submit', closeModal);
 }
 
 /*
@@ -59,19 +64,21 @@ function sendSignUp( e ) {
  */
 function validateFormInputs() {
 
+    let valid = true;
+
     // Check inputs (text-control)
     for (const obj of inputSettings) {
-        if (!isValidInput(obj)) return false;
+        if (!isValidInput(obj)) valid = false;
     }
 
     // Check location
-    if (!isValidRadio(checkSettings[0])) return false;
+    if (!isValidRadio(checkSettings[0])) valid = false;
 
     // Check conditions
-    if (!isValidCheckbox(checkSettings[1])) return false;
+    if (!isValidCheckbox(checkSettings[1])) valid = false;
 
     // All tests passed !
-    return true;
+    return valid;
 }
 
 // ------------ FUNCTIONS ------------- //
@@ -142,12 +149,16 @@ function isValidInput(obj){
     const el = document.getElementById(obj.id);
     const parent = el.parentElement;
     if ( el.value.length > 0  && obj.regex.test(el.value) ) {
+        if (obj.id === 'birthdate') {
+            // test date
+            const now = new Date();
+            // 
+        }
         clearErrorMessage(parent);
         return true;
-    } else {
-        setErrorMessage(parent, obj.errorMsg)
-        return false;
-    }
+    } 
+    setErrorMessage(parent, obj.errorMsg)
+    return false;
 }
 
 // Display error messages and clear them
