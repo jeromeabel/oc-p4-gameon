@@ -149,8 +149,8 @@ function isValidInput(obj){
         if (obj.id === 'birthdate') {
             const now = new Date(Date.now());
             const inputDate = new Date(el.value);
-            if ( inputDate > now ) {
-                setErrorMessage(parent, "Veuillez entrer une date inférieure à aujourd'hui.")
+            if ( (now.getFullYear() - inputDate.getFullYear()) < 12 ) {
+                setErrorMessage(parent, "Vous devez avoir au moins 12 ans pour participer.")
                 return false;
             }
         }
