@@ -15,11 +15,11 @@ const regexDate = /([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)|((Jan(|uary)|Feb(|rua
 
 // Inputs : text, email, date, number
 const inputSettings = [
-    { id: 'first'       , regex: regexName  , errorMsg : 'Veuillez entrer au moins deux caractères.'},
-    { id: 'last'        , regex: regexName  , errorMsg : 'Veuillez entrer au moins deux caractères.' },
-    { id: 'email'       , regex: regexEmail , errorMsg : 'Veuillez entrer une adresse email valide.'},
-    { id: 'birthdate'   , regex: regexDate  , errorMsg : 'Veuillez entrer votre date de naissance.'},
-    { id: 'quantity'    , regex: regexNumber, errorMsg : 'Veuillez entrer un chiffre'}
+    { id: 'first'       , regex: regexName  , errorMsg: 'Veuillez entrer au moins deux caractères.'},
+    { id: 'last'        , regex: regexName  , errorMsg: 'Veuillez entrer au moins deux caractères.' },
+    { id: 'email'       , regex: regexEmail , errorMsg: 'Veuillez entrer une adresse email valide.'},
+    { id: 'birthdate'   , regex: regexDate  , errorMsg: 'Veuillez entrer votre date de naissance.'},
+    { id: 'quantity'    , regex: regexNumber, errorMsg: 'Veuillez entrer un chiffre'}
 ]
 
 // Checkboxes & radios
@@ -145,10 +145,14 @@ function isValidInput(obj){
     const el = document.getElementById(obj.id);
     const parent = el.parentElement;
     if ( el.value.length > 0  && obj.regex.test(el.value) ) {
+        // Add a custom test for dates
         if (obj.id === 'birthdate') {
-            // test date
-            const now = new Date();
-            // 
+            const now = new Date(Date.now());
+            const inputDate = new Date(el.value);
+            if ( inputDate > now ) {
+                setErrorMessage(parent, "Veuillez entrer une date inférieure à aujourd'hui.")
+                return false;
+            }
         }
         clearErrorMessage(parent);
         return true;
