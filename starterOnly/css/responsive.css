@@ -1,6 +1,7 @@
 /* Desktop first max-width large to small sizes */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
+
   main {
     margin:0 15px;
   }
@@ -74,9 +75,7 @@
   .btn-submit, .btn-signup {
     padding: 12px 32px;
   }
-}
 
-@media screen and (max-width: 768px) {
 
   .topnav a {
     display: none;
@@ -125,6 +124,13 @@
     color:white;
   }
 
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: -15px;
+    color: #f00;
+  }
+
   .content {
     margin-top:80px;
     border-radius: 8px 8px 0 0;
@@ -136,12 +142,6 @@
     display: none;
   }
 
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-    color: #f00;
-  }
 
   .bground {
     background-color: transparent;
