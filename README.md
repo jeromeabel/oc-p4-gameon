@@ -1,6 +1,9 @@
 # oc-p4-gameon
 Créez une landing page avec Javascript
 
+## A améliorer
+- ForEeach : addEventListener input isValid
+
 ## Contexte
 - GameOn, PME, spécialisée dans les conférences et les concours de jeux.
 
