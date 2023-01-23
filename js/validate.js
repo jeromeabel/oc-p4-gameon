@@ -29,7 +29,7 @@ const checkSettings = [
 ]
 
 // Message after validation
-const successMsg = "Inscription réussie !<br>🚀";
+const successMsg = "Merci pour votre inscription !";
 
 // ------------ MAIN ------------- //
 
