@@ -19,7 +19,7 @@ body {
   /* background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
-  max-width: 1300px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -104,9 +104,13 @@ main {
 }
 
 .footer {
-  margin: 20px;
-  padding: 10px;
+  /* margin: 20px;
+  padding: 10px; */
   font-family: var(--font-slab);
+
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0 20px;
 }
 
 /* Modal form */
