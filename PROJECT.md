@@ -1,5 +1,8 @@
 # PROJECT
 
+## A améliorer
+- ForEeach : addEventListener input isValid
+
 ## Équipe
 - Erika, développeur principal
 - Moi, dev Front-End junior (shadowing d'Erika)
